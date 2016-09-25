@@ -85,7 +85,9 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-AirbnbNano/XCGLogger.framework"
+  install_framework "Pods-AirbnbNano/Alamofire.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-AirbnbNano/XCGLogger.framework"
+  install_framework "Pods-AirbnbNano/Alamofire.framework"
 fi

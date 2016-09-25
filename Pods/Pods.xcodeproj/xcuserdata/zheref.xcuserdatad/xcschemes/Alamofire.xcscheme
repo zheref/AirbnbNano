@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'B22B0FEE614D76AE8948E10A'
-               BlueprintName = 'Pods-AirbnbNanoUITests'
+               BlueprintIdentifier = '10C8D57DC2661199845109E2'
+               BlueprintName = 'Alamofire'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Pods_AirbnbNanoUITests.framework'>
+               BuildableName = 'Alamofire.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

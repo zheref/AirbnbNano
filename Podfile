@@ -6,7 +6,7 @@ use_frameworks!
 pod 'XCGLogger', '~> 4.0.0'
 
 target 'AirbnbNano' do
-
+    pod 'Alamofire', '~> 4.0'
 end
 
 target 'AirbnbNanoTests' do

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '22F0993684DC3851F9A74A27'
+               BlueprintIdentifier = '4A8E0BC96D9F805894C0C096'
                BlueprintName = 'Pods-AirbnbNanoTests'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_AirbnbNanoTests.framework'>
