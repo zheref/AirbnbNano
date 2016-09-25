@@ -9,24 +9,31 @@
 import UIKit
 
 
-protocol LoginViewControllerProtocol {
+protocol LoginViewControllerProtocol : ViewProtocol {
     func performSegue(withIdentifier identifier: String, sender: Any?)
 }
 
 
 class LoginViewController : UIViewController, LoginViewControllerProtocol {
     
-    var presenter: LoginPresenterProtocol!
-    
+    var presenter: LoginPresenter = LoginPresenter()
     
     override func viewDidLoad() {
-        //presenter.onLoginDidLoad()
+        presenter.attachView(view: self)
+        
+        presenter.onLoginDidLoad()
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        presenter.onLoginWillAppear()
     }
     
     
     @IBAction func onSignInWithFacebookTouchUpInside(_ sender: UIButton) {
-        
+        presenter.onSignInWithFacebook()
     }
     
 }

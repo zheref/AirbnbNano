@@ -9,23 +9,39 @@
 import Foundation
 
 
-protocol LoginPresenterProtocol {
+protocol LoginPresenterProtocol : PresenterProtocol {
     
     func onLoginDidLoad()
+    
+    func onLoginWillAppear()
+    
+    func onSignInWithFacebook()
     
 }
 
 
 class LoginPresenter : LoginPresenterProtocol {
     
-    var vc: LoginViewControllerProtocol!
+    weak var vc: LoginViewControllerProtocol?
     
-    init(forView view: LoginViewControllerProtocol) {
+    init() {
+        
+    }
+    
+    func attachView(view: LoginViewControllerProtocol) {
         vc = view
     }
     
     func onLoginDidLoad() {
-        vc.performSegue(withIdentifier: KSegues.LoginToMain, sender: self)
+        
+    }
+    
+    func onLoginWillAppear() {
+        vc?.performSegue(withIdentifier: KSegues.LoginToMain, sender: vc)
+    }
+    
+    func onSignInWithFacebook() {
+        vc?.performSegue(withIdentifier: KSegues.LoginToMain, sender: vc)
     }
     
 }

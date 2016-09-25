@@ -10,3 +10,21 @@ import Foundation
 import XCGLogger
 
 let log = XCGLogger.default
+
+protocol PresenterProtocol : class {
+    associatedtype View = ViewProtocol
+    
+    func attachView(view: View)
+}
+
+protocol ViewProtocol : class {
+    
+}
+
+protocol RepositoryProtocol : class {
+    
+}
+
+protocol ModelProtocol : class {
+    
+}
