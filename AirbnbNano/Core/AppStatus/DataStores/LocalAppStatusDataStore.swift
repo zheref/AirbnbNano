@@ -24,4 +24,10 @@ class LocalAppStatusDataStore: AppStatusDataStoreProtocol {
         defaults.set(email, forKey: LocalAppStatusDataStore.LoggedInEmailKey)
     }
     
+    func notifyUserHasLoggedOut() {
+        let defaults = UserDefaults.standard
+        
+        defaults.removeObject(forKey: LocalAppStatusDataStore.LoggedInEmailKey)
+    }
+    
 }

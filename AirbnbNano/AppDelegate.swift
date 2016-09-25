@@ -20,7 +20,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         log.setup(level: .debug, showLogIdentifier: true, showFunctionName: true,
                   showThreadName: true, showLevel: true, showFileNames: true, showLineNumbers: true,
                   showDate: true, writeToFile: nil, fileLevel: .verbose)
+        
+        checkIfLoggedIn()
+        
         return true
+    }
+    
+    private func checkIfLoggedIn() {
+        let store: AppStatusDataStoreProtocol = LocalAppStatusDataStore()
+        
+        store.isUserLoggedIn(answeringThrough: { (userEmail) in
+            let userLoggedIn = userEmail != nil
+            
+            if !userLoggedIn {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                
+                if let vc = storyboard.instantiateViewController(withIdentifier: KScene.Login)
+                    as? LoginViewController {
+                    
+                    self.window?.makeKeyAndVisible()
+                    self.window?.rootViewController?.present(vc, animated: false, completion: nil)
+                } else {
+                    log.error("Could not cast vc into LoginViewController")
+                }
+            }
+        })
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

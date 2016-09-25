@@ -16,4 +16,6 @@ protocol AppStatusDataStoreProtocol : DataStoreProtocol {
     
     func notifyUserHasLoggedIn(withEmail email: String)
     
+    func notifyUserHasLoggedOut()
+    
 }
