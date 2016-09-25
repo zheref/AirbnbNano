@@ -1,0 +1,6 @@
+framework module Pods_AirbnbNano {
+  umbrella header "Pods-AirbnbNano-umbrella.h"
+
+  export *
+  module * { export * }
+}

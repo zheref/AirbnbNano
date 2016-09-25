@@ -3,6 +3,8 @@ platform :ios, '10.0'
 # Uncomment this line if you're using Swift
 use_frameworks!
 
+pod 'XCGLogger', '~> 4.0.0'
+
 target 'AirbnbNano' do
 
 end
