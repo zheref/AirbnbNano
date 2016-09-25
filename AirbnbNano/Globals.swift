@@ -28,3 +28,7 @@ protocol RepositoryProtocol : class {
 protocol ModelProtocol : class {
     
 }
+
+protocol DataStoreProtocol : class {
+    
+}

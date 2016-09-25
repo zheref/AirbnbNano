@@ -1,5 +1,5 @@
 //
-//  Konstants.swift
+//  UsersDataStoreProtocol.swift
 //  AirbnbNano
 //
 //  Created by Sergio Daniel Leztark on 9/25/16.
@@ -8,10 +8,6 @@
 
 import Foundation
 
-class KSegue {
+protocol UsersDataStoreProtocol : DataStoreProtocol {
     
-}
-
-class KScene {
-    static let Login = "Login"
 }

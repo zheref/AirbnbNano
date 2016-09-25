@@ -11,6 +11,10 @@
 		2B78766A1D977F9D00142678 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7876691D977F9D00142678 /* LoginPresenter.swift */; };
 		2B78766E1D97804000142678 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78766D1D97804000142678 /* LoginViewController.swift */; };
 		2B8F96B51D983D0F00469706 /* Konstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8F96B41D983D0F00469706 /* Konstants.swift */; };
+		2BB116B61D98870B00F6496A /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB116B51D98870B00F6496A /* UserEntity.swift */; };
+		2BB116B81D98872900F6496A /* UsersDataStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB116B71D98872900F6496A /* UsersDataStoreProtocol.swift */; };
+		2BB116BC1D98881400F6496A /* AppStatusDataStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB116BB1D98881400F6496A /* AppStatusDataStoreProtocol.swift */; };
+		2BB116BE1D98894B00F6496A /* LocalAppStatusDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB116BD1D98894B00F6496A /* LocalAppStatusDataStore.swift */; };
 		2BD77A9C1D934005007F15FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD77A9B1D934005007F15FA /* AppDelegate.swift */; };
 		2BD77AA11D934005007F15FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BD77A9F1D934005007F15FA /* Main.storyboard */; };
 		2BD77AA41D934005007F15FA /* AirbnbNano.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2BD77AA21D934005007F15FA /* AirbnbNano.xcdatamodeld */; };
@@ -44,6 +48,10 @@
 		2B7876691D977F9D00142678 /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginPresenter.swift; path = Presentation/Login/LoginPresenter.swift; sourceTree = "<group>"; };
 		2B78766D1D97804000142678 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Presentation/Login/LoginViewController.swift; sourceTree = "<group>"; };
 		2B8F96B41D983D0F00469706 /* Konstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Konstants.swift; sourceTree = "<group>"; };
+		2BB116B51D98870B00F6496A /* UserEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserEntity.swift; path = Core/Users/UserEntity.swift; sourceTree = "<group>"; };
+		2BB116B71D98872900F6496A /* UsersDataStoreProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UsersDataStoreProtocol.swift; path = Core/Users/DataStores/UsersDataStoreProtocol.swift; sourceTree = "<group>"; };
+		2BB116BB1D98881400F6496A /* AppStatusDataStoreProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppStatusDataStoreProtocol.swift; path = Core/AppStatus/DataStores/AppStatusDataStoreProtocol.swift; sourceTree = "<group>"; };
+		2BB116BD1D98894B00F6496A /* LocalAppStatusDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalAppStatusDataStore.swift; path = Core/AppStatus/DataStores/LocalAppStatusDataStore.swift; sourceTree = "<group>"; };
 		2BD77A981D934005007F15FA /* AirbnbNano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirbnbNano.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BD77A9B1D934005007F15FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BD77AA01D934005007F15FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -102,6 +110,9 @@
 		2B7876661D977CD100142678 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				2BB116B91D9887EF00F6496A /* AppStatus */,
+				2BB116B21D98864200F6496A /* Users */,
+				2BB116B31D98864800F6496A /* Listings */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -120,6 +131,47 @@
 				2B78766D1D97804000142678 /* LoginViewController.swift */,
 			);
 			name = Login;
+			sourceTree = "<group>";
+		};
+		2BB116B21D98864200F6496A /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				2BB116B51D98870B00F6496A /* UserEntity.swift */,
+				2BB116B41D98869500F6496A /* DataStores */,
+			);
+			name = Users;
+			sourceTree = "<group>";
+		};
+		2BB116B31D98864800F6496A /* Listings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Listings;
+			sourceTree = "<group>";
+		};
+		2BB116B41D98869500F6496A /* DataStores */ = {
+			isa = PBXGroup;
+			children = (
+				2BB116B71D98872900F6496A /* UsersDataStoreProtocol.swift */,
+			);
+			name = DataStores;
+			sourceTree = "<group>";
+		};
+		2BB116B91D9887EF00F6496A /* AppStatus */ = {
+			isa = PBXGroup;
+			children = (
+				2BB116BA1D9887FA00F6496A /* DataStores */,
+			);
+			name = AppStatus;
+			sourceTree = "<group>";
+		};
+		2BB116BA1D9887FA00F6496A /* DataStores */ = {
+			isa = PBXGroup;
+			children = (
+				2BB116BB1D98881400F6496A /* AppStatusDataStoreProtocol.swift */,
+				2BB116BD1D98894B00F6496A /* LocalAppStatusDataStore.swift */,
+			);
+			name = DataStores;
 			sourceTree = "<group>";
 		};
 		2BD77A8F1D934005007F15FA = {
@@ -387,8 +439,12 @@
 			files = (
 				2B78766A1D977F9D00142678 /* LoginPresenter.swift in Sources */,
 				2BD77AA41D934005007F15FA /* AirbnbNano.xcdatamodeld in Sources */,
+				2BB116B81D98872900F6496A /* UsersDataStoreProtocol.swift in Sources */,
+				2BB116BC1D98881400F6496A /* AppStatusDataStoreProtocol.swift in Sources */,
 				2B8F96B51D983D0F00469706 /* Konstants.swift in Sources */,
 				2B78766E1D97804000142678 /* LoginViewController.swift in Sources */,
+				2BB116B61D98870B00F6496A /* UserEntity.swift in Sources */,
+				2BB116BE1D98894B00F6496A /* LocalAppStatusDataStore.swift in Sources */,
 				2B5D53DD1D984A5A00630140 /* Globals.swift in Sources */,
 				2BD77A9C1D934005007F15FA /* AppDelegate.swift in Sources */,
 			);

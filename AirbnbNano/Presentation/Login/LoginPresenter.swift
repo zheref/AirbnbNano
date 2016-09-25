@@ -37,11 +37,11 @@ class LoginPresenter : LoginPresenterProtocol {
     }
     
     func onLoginWillAppear() {
-        vc?.performSegue(withIdentifier: KSegues.LoginToMain, sender: vc)
+        
     }
     
     func onSignInWithFacebook() {
-        vc?.performSegue(withIdentifier: KSegues.LoginToMain, sender: vc)
+        
     }
     
 }
