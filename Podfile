@@ -7,6 +7,9 @@ pod 'XCGLogger', '~> 4.0.0'
 
 target 'AirbnbNano' do
     pod 'Alamofire', '~> 4.0'
+    pod 'FacebookCore'
+    pod 'FacebookLogin'
+    pod 'FacebookShare'
 end
 
 target 'AirbnbNanoTests' do
