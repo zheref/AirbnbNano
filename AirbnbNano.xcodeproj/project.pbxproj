@@ -51,6 +51,7 @@
 		03ACBDD2CBB862B8AADEF8BA /* Pods-AirbnbNanoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirbnbNanoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AirbnbNanoUITests/Pods-AirbnbNanoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1240A3CF872B2006357C6843 /* Pods-AirbnbNanoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirbnbNanoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirbnbNanoUITests/Pods-AirbnbNanoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		24B44A1CCFBA00D428926C86 /* Pods-AirbnbNanoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirbnbNanoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AirbnbNanoTests/Pods-AirbnbNanoTests.release.xcconfig"; sourceTree = "<group>"; };
+		2B57E5691D99048500CA8D65 /* AirbnbNano.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AirbnbNano.entitlements; sourceTree = "<group>"; };
 		2B5D53DC1D984A5A00630140 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		2B7876691D977F9D00142678 /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginPresenter.swift; path = Presentation/Login/LoginPresenter.swift; sourceTree = "<group>"; };
 		2B78766D1D97804000142678 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Presentation/Login/LoginViewController.swift; sourceTree = "<group>"; };
@@ -232,6 +233,7 @@
 		2BD77A9A1D934005007F15FA /* AirbnbNano */ = {
 			isa = PBXGroup;
 			children = (
+				2B57E5691D99048500CA8D65 /* AirbnbNano.entitlements */,
 				2BD77A9B1D934005007F15FA /* AppDelegate.swift */,
 				2B7876651D977CCB00142678 /* Presentation */,
 				2B7876661D977CD100142678 /* Core */,
@@ -366,6 +368,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = AQUE4FE98B;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					2BD77AAE1D934005007F15FA = {
 						CreatedOnToolsVersion = 8.0;
@@ -721,6 +728,7 @@
 			baseConfigurationReference = 4EEFA7346C9D8E259C783A92 /* Pods-AirbnbNano.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AirbnbNano/AirbnbNano.entitlements;
 				DEVELOPMENT_TEAM = AQUE4FE98B;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -739,6 +747,7 @@
 			baseConfigurationReference = 7B9FBEFDA125B51F439D13C1 /* Pods-AirbnbNano.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AirbnbNano/AirbnbNano.entitlements;
 				DEVELOPMENT_TEAM = AQUE4FE98B;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
