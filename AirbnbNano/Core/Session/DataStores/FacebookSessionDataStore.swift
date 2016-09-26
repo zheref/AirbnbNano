@@ -7,48 +7,54 @@
 //
 
 import Foundation
-import FBSDKLoginKit
+
+import FacebookCore
+import FacebookLogin
 
 class FacebookSessionDataStore : SessionDataStoreProtocol {
     
     func loginByTunneling(fromSender sender: Any?,
                           andReturningBy returner: @escaping SigningInProcessResultReturner) {
-        let manager = FBSDKLoginManager()
+        let manager = LoginManager()
         
-        manager.logIn(withReadPermissions: ["public_profile", "email"],
-                      from: sender! as! UIViewController) { (result, error) in
+        manager.logIn([.publicProfile, .email, .userFriends],
+                      viewController: sender! as? UIViewController) { loginResult in
                         
-            if let error = error {
-                log.error(error.localizedDescription)
-                returner(.Error)
-            } else if result!.isCancelled {
-                returner(.Cancelled)
-            } else {
-                returner(.Succeeded)
+            switch loginResult {
+                case .failed(let error):
+                    log.error(error)
+                    returner(.Error)
+                case .cancelled:
+                    print("User cancelled login.")
+                    returner(.Cancelled)
+                case .success(let grantedPermissions, let declinedPermissions, let accessToken):
+                    print("Logged in!")
+                    returner(.Succeeded)
             }
         }
     }
     
     
     func getUserEmail(byReturner returner: @escaping UserEmailReturner, orFailingWith thrower: @escaping Thrower) {
-        let request = FBSDKGraphRequest(graphPath: "me",
-                                        parameters: ["fields": "email,name"],
-                                        tokenString: FBSDKAccessToken.current().tokenString,
-                                        version: nil, httpMethod: "GET")
+        let request = GraphRequest(graphPath: "me",
+                                   parameters: ["fields": "email,name"],
+                                   accessToken: AccessToken.current,
+                                   httpMethod: .GET,
+                                   apiVersion: GraphAPIVersion(floatLiteral: 2.7))
         
-        request?.start(completionHandler: { (connection, result, error) in
-            log.verbose(connection?.description)
+        request.start { (response: HTTPURLResponse?, result: GraphRequestResult<GraphRequest>) in
             
-            if let error = error {
+            switch result {
+            case .failed(let error):
                 thrower(error)
-            } else {
-                if let dict = result as? [String: AnyObject] {
+            case .success(let response):
+                if let dict = response.dictionaryValue {
                     returner(dict["email"]! as! String)
                 } else {
                     log.error("Could not cast result into dictionary")
                 }
             }
-        })
+        }
     }
     
 }
