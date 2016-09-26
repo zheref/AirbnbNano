@@ -18,6 +18,10 @@
 		2BB116C21D9892E300F6496A /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BB116BF1D9892E300F6496A /* FBSDKCoreKit.framework */; };
 		2BB116C31D9892E300F6496A /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BB116C01D9892E300F6496A /* FBSDKLoginKit.framework */; };
 		2BB116C41D9892E300F6496A /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BB116C11D9892E300F6496A /* FBSDKShareKit.framework */; };
+		2BB116C81D98979800F6496A /* SessionDataStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB116C71D98979800F6496A /* SessionDataStoreProtocol.swift */; };
+		2BB116CA1D9897DB00F6496A /* FacebookSessionDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB116C91D9897DB00F6496A /* FacebookSessionDataStore.swift */; };
+		2BB116CC1D989A8B00F6496A /* SessionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB116CB1D989A8B00F6496A /* SessionRepository.swift */; };
+		2BB116CE1D98EC1F00F6496A /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BB116CD1D98EC1F00F6496A /* Bolts.framework */; };
 		2BD77A9C1D934005007F15FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD77A9B1D934005007F15FA /* AppDelegate.swift */; };
 		2BD77AA11D934005007F15FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BD77A9F1D934005007F15FA /* Main.storyboard */; };
 		2BD77AA41D934005007F15FA /* AirbnbNano.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2BD77AA21D934005007F15FA /* AirbnbNano.xcdatamodeld */; };
@@ -58,6 +62,10 @@
 		2BB116BF1D9892E300F6496A /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		2BB116C01D9892E300F6496A /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		2BB116C11D9892E300F6496A /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		2BB116C71D98979800F6496A /* SessionDataStoreProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SessionDataStoreProtocol.swift; path = Core/Session/DataStores/SessionDataStoreProtocol.swift; sourceTree = "<group>"; };
+		2BB116C91D9897DB00F6496A /* FacebookSessionDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FacebookSessionDataStore.swift; path = Core/Session/DataStores/FacebookSessionDataStore.swift; sourceTree = "<group>"; };
+		2BB116CB1D989A8B00F6496A /* SessionRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SessionRepository.swift; path = Core/Session/SessionRepository.swift; sourceTree = "<group>"; };
+		2BB116CD1D98EC1F00F6496A /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		2BD77A981D934005007F15FA /* AirbnbNano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirbnbNano.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BD77A9B1D934005007F15FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BD77AA01D934005007F15FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -85,6 +93,7 @@
 				69163BED5175767EF2FD48AC /* Pods.framework in Frameworks */,
 				2BB116C21D9892E300F6496A /* FBSDKCoreKit.framework in Frameworks */,
 				2BB116C41D9892E300F6496A /* FBSDKShareKit.framework in Frameworks */,
+				2BB116CE1D98EC1F00F6496A /* Bolts.framework in Frameworks */,
 				2BB116C31D9892E300F6496A /* FBSDKLoginKit.framework in Frameworks */,
 				CB3CCB3175CAB068D4B3D605 /* Pods_AirbnbNano.framework in Frameworks */,
 			);
@@ -119,6 +128,7 @@
 		2B7876661D977CD100142678 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				2BB116C51D98977E00F6496A /* Session */,
 				2BB116B91D9887EF00F6496A /* AppStatus */,
 				2BB116B21D98864200F6496A /* Users */,
 				2BB116B31D98864800F6496A /* Listings */,
@@ -179,6 +189,24 @@
 			children = (
 				2BB116BB1D98881400F6496A /* AppStatusDataStoreProtocol.swift */,
 				2BB116BD1D98894B00F6496A /* LocalAppStatusDataStore.swift */,
+			);
+			name = DataStores;
+			sourceTree = "<group>";
+		};
+		2BB116C51D98977E00F6496A /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				2BB116CB1D989A8B00F6496A /* SessionRepository.swift */,
+				2BB116C61D98978200F6496A /* DataStores */,
+			);
+			name = Session;
+			sourceTree = "<group>";
+		};
+		2BB116C61D98978200F6496A /* DataStores */ = {
+			isa = PBXGroup;
+			children = (
+				2BB116C71D98979800F6496A /* SessionDataStoreProtocol.swift */,
+				2BB116C91D9897DB00F6496A /* FacebookSessionDataStore.swift */,
 			);
 			name = DataStores;
 			sourceTree = "<group>";
@@ -252,6 +280,7 @@
 		B0EC4BF1D6F8FD4A56AE23CA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2BB116CD1D98EC1F00F6496A /* Bolts.framework */,
 				2BB116BF1D9892E300F6496A /* FBSDKCoreKit.framework */,
 				2BB116C01D9892E300F6496A /* FBSDKLoginKit.framework */,
 				2BB116C11D9892E300F6496A /* FBSDKShareKit.framework */,
@@ -450,12 +479,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B78766A1D977F9D00142678 /* LoginPresenter.swift in Sources */,
+				2BB116CC1D989A8B00F6496A /* SessionRepository.swift in Sources */,
 				2BD77AA41D934005007F15FA /* AirbnbNano.xcdatamodeld in Sources */,
 				2BB116B81D98872900F6496A /* UsersDataStoreProtocol.swift in Sources */,
 				2BB116BC1D98881400F6496A /* AppStatusDataStoreProtocol.swift in Sources */,
 				2B8F96B51D983D0F00469706 /* Konstants.swift in Sources */,
 				2B78766E1D97804000142678 /* LoginViewController.swift in Sources */,
+				2BB116CA1D9897DB00F6496A /* FacebookSessionDataStore.swift in Sources */,
 				2BB116B61D98870B00F6496A /* UserEntity.swift in Sources */,
+				2BB116C81D98979800F6496A /* SessionDataStoreProtocol.swift in Sources */,
 				2BB116BE1D98894B00F6496A /* LocalAppStatusDataStore.swift in Sources */,
 				2B5D53DD1D984A5A00630140 /* Globals.swift in Sources */,
 				2BD77A9C1D934005007F15FA /* AppDelegate.swift in Sources */,

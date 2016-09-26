@@ -11,6 +11,11 @@ import XCGLogger
 
 let log = XCGLogger.default
 
+
+typealias Thrower = (Error) -> Void
+typealias ErrorThrower = (NSError) -> Void
+
+
 protocol PresenterProtocol : class {
     associatedtype View = ViewProtocol
     

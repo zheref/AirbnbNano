@@ -16,7 +16,8 @@ protocol LoginViewControllerProtocol : ViewProtocol {
 
 class LoginViewController : UIViewController, LoginViewControllerProtocol {
     
-    var presenter: LoginPresenter = LoginPresenter()
+    var presenter: LoginPresenter = LoginPresenter(
+        withSessionRepository: SessionRepository(withDataStore: FacebookSessionDataStore()))
     
     override func viewDidLoad() {
         presenter.attachView(view: self)

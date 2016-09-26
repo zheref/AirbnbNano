@@ -22,10 +22,12 @@ protocol LoginPresenterProtocol : PresenterProtocol {
 
 class LoginPresenter : LoginPresenterProtocol {
     
+    var repository: SessionRepository
+    
     weak var vc: LoginViewControllerProtocol?
     
-    init() {
-        
+    init(withSessionRepository repository: SessionRepository) {
+        self.repository = repository
     }
     
     func attachView(view: LoginViewControllerProtocol) {
@@ -41,7 +43,16 @@ class LoginPresenter : LoginPresenterProtocol {
     }
     
     func onSignInWithFacebook() {
-        
+        repository.loginWithFacebook(fromSender: vc) { (result) in
+            switch result {
+            case .Cancelled:
+                break
+            case .Error:
+                break
+            case .Succeeded:
+                break
+            }
+        }
     }
     
 }

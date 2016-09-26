@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import FBSDKLoginKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -46,6 +47,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         })
     }
+    
+    @available(iOS 9.0, *)
+    func application(application: UIApplication, openURL url: URL,
+                     options: [String: AnyObject]) -> Bool {
+        
+        return FBSDKApplicationDelegate.sharedInstance().application(application,
+                                                                     open: url,
+                                                                     sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication.rawValue] as! String,
+                                                                     annotation: options [UIApplicationOpenURLOptionsKey.annotation.rawValue])
+    }
+    
+    
+    @available(iOS, introduced: 8.0, deprecated: 9.0)
+    func application(application: UIApplication, openURL url: URL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        return FBSDKApplicationDelegate.sharedInstance().application(application,
+                                                                     open: url,
+                                                                     sourceApplication: sourceApplication!,
+                                                                     annotation: annotation)
+    }
+    
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
