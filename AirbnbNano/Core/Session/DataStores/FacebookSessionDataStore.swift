@@ -28,7 +28,7 @@ class FacebookSessionDataStore : SessionDataStoreProtocol {
                     print("User cancelled login.")
                     returner(.Cancelled)
                 case .success(let grantedPermissions, let declinedPermissions, let accessToken):
-                    print("Logged in!")
+                    log.verbose("Logged in!")
                     returner(.Succeeded)
             }
         }
@@ -37,7 +37,7 @@ class FacebookSessionDataStore : SessionDataStoreProtocol {
     
     func getUserEmail(byReturner returner: @escaping UserEmailReturner, orFailingWith thrower: @escaping Thrower) {
         let request = GraphRequest(graphPath: "me",
-                                   parameters: ["fields": "email,name"],
+                                   parameters: ["fields": "email"],
                                    accessToken: AccessToken.current,
                                    httpMethod: .GET,
                                    apiVersion: GraphAPIVersion(floatLiteral: 2.7))
@@ -50,6 +50,29 @@ class FacebookSessionDataStore : SessionDataStoreProtocol {
             case .success(let response):
                 if let dict = response.dictionaryValue {
                     returner(dict["email"]! as! String)
+                } else {
+                    log.error("Could not cast result into dictionary")
+                }
+            }
+        }
+    }
+    
+    
+    func getUserPicAndName(by returner: @escaping UserPicAndNameReturner, orFailWith thrower: @escaping Thrower) {
+        let request = GraphRequest(graphPath: "me",
+                                   parameters: ["fields": "name"],
+                                   accessToken: AccessToken.current,
+                                   httpMethod: .GET,
+                                   apiVersion: GraphAPIVersion(floatLiteral: 2.7))
+        
+        request.start { (response: HTTPURLResponse?, result: GraphRequestResult<GraphRequest>) in
+            
+            switch result {
+            case .failed(let error):
+                thrower(error)
+            case .success(let response):
+                if let dict = response.dictionaryValue {
+                    returner(dict["name"]! as! String, dict["id"]! as! String)
                 } else {
                     log.error("Could not cast result into dictionary")
                 }

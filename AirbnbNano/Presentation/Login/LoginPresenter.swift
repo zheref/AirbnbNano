@@ -11,10 +11,6 @@ import Foundation
 
 protocol LoginPresenterProtocol : PresenterProtocol {
     
-    func onLoginDidLoad()
-    
-    func onLoginWillAppear()
-    
     func onSignInWithFacebook()
     
 }
@@ -26,21 +22,26 @@ class LoginPresenter : LoginPresenterProtocol {
     
     weak var vc: LoginViewControllerProtocol?
     
+    
     init(withSessionRepository repository: SessionRepository) {
         self.repository = repository
     }
+    
     
     func attachView(view: LoginViewControllerProtocol) {
         vc = view
     }
     
-    func onLoginDidLoad() {
+    
+    func onLoad() {
         
     }
     
-    func onLoginWillAppear() {
+    
+    func beforeAppear() {
         
     }
+    
     
     func onSignInWithFacebook() {
         repository.loginWithFacebook(fromSender: vc) { (result) in

@@ -13,9 +13,11 @@ class SessionRepository : RepositoryProtocol {
     
     var dataStore: SessionDataStoreProtocol
     
+    
     init(withDataStore dataStore: SessionDataStoreProtocol) {
         self.dataStore = dataStore
     }
+    
     
     func loginWithFacebook(fromSender sender: Any?,
                            andReturningBy returner: @escaping SigningInProcessResultReturner) {
@@ -34,6 +36,13 @@ class SessionRepository : RepositoryProtocol {
             
             returner(result)
         })
+    }
+    
+    
+    func getUserNameAndPic(by returner: @escaping (String, String) -> Void, orFailWith thrower: @escaping Thrower) {
+        dataStore.getUserPicAndName(by: { (name, id) in
+            returner(name, "http://graph.facebook.com/\(id)/picture?type=large")
+        }, orFailWith: thrower)
     }
     
 }

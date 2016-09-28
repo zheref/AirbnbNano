@@ -22,14 +22,14 @@ class LoginViewController : UIViewController, LoginViewControllerProtocol {
     override func viewDidLoad() {
         presenter.attachView(view: self)
         
-        presenter.onLoginDidLoad()
+        presenter.onLoad()
         super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        presenter.onLoginWillAppear()
+        presenter.beforeAppear()
     }
     
     

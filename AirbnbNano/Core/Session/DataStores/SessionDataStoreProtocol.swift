@@ -16,6 +16,7 @@ enum SigningInProcessResult {
 
 typealias SigningInProcessResultReturner = (SigningInProcessResult) -> Void
 typealias UserEmailReturner = (String) -> Void
+typealias UserPicAndNameReturner = (String, String) -> Void
 
 
 protocol SessionDataStoreProtocol {
@@ -24,5 +25,7 @@ protocol SessionDataStoreProtocol {
     
     
     func getUserEmail(byReturner returner: @escaping UserEmailReturner, orFailingWith thrower: @escaping Thrower)
+    
+    func getUserPicAndName(by returner: @escaping UserPicAndNameReturner, orFailWith thrower: @escaping Thrower)
     
 }

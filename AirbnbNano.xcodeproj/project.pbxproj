@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		0A5235159755095834C50FAD /* Pods_AirbnbNanoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E214B7FB844719B710527C3D /* Pods_AirbnbNanoUITests.framework */; };
+		2B26ADF31D9B7B5C00A588C0 /* ListingEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B26ADF21D9B7B5C00A588C0 /* ListingEntity.swift */; };
+		2B26ADFA1D9B7C8E00A588C0 /* Listing+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B26ADF81D9B7C8E00A588C0 /* Listing+CoreDataClass.swift */; };
+		2B26ADFB1D9B7C8E00A588C0 /* Listing+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B26ADF91D9B7C8E00A588C0 /* Listing+CoreDataProperties.swift */; };
+		2B26ADFE1D9B7D0300A588C0 /* ListingDataStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B26ADFD1D9B7D0300A588C0 /* ListingDataStoreProtocol.swift */; };
+		2B26AE001D9B7D3000A588C0 /* NetworkListingsDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B26ADFF1D9B7D3000A588C0 /* NetworkListingsDataStore.swift */; };
+		2B26AE031D9B83A400A588C0 /* ListingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B26AE021D9B83A400A588C0 /* ListingsViewController.swift */; };
+		2B26AE051D9B880C00A588C0 /* ListingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B26AE041D9B880C00A588C0 /* ListingsRepository.swift */; };
+		2B26AE071D9B883000A588C0 /* ListingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B26AE061D9B883000A588C0 /* ListingsPresenter.swift */; };
+		2B26AE0C1D9B88AB00A588C0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B26AE0B1D9B88AB00A588C0 /* ProfileViewController.swift */; };
+		2B26AE0E1D9B88B600A588C0 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B26AE0D1D9B88B600A588C0 /* ProfilePresenter.swift */; };
 		2B5D53DD1D984A5A00630140 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5D53DC1D984A5A00630140 /* Globals.swift */; };
 		2B78766A1D977F9D00142678 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7876691D977F9D00142678 /* LoginPresenter.swift */; };
 		2B78766E1D97804000142678 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78766D1D97804000142678 /* LoginViewController.swift */; };
@@ -51,6 +61,16 @@
 		03ACBDD2CBB862B8AADEF8BA /* Pods-AirbnbNanoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirbnbNanoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AirbnbNanoUITests/Pods-AirbnbNanoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1240A3CF872B2006357C6843 /* Pods-AirbnbNanoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirbnbNanoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirbnbNanoUITests/Pods-AirbnbNanoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		24B44A1CCFBA00D428926C86 /* Pods-AirbnbNanoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirbnbNanoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AirbnbNanoTests/Pods-AirbnbNanoTests.release.xcconfig"; sourceTree = "<group>"; };
+		2B26ADF21D9B7B5C00A588C0 /* ListingEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListingEntity.swift; path = Core/Listings/ListingEntity.swift; sourceTree = "<group>"; };
+		2B26ADF81D9B7C8E00A588C0 /* Listing+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Listing+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2B26ADF91D9B7C8E00A588C0 /* Listing+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Listing+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2B26ADFD1D9B7D0300A588C0 /* ListingDataStoreProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListingDataStoreProtocol.swift; path = Core/Listings/DataStores/ListingDataStoreProtocol.swift; sourceTree = "<group>"; };
+		2B26ADFF1D9B7D3000A588C0 /* NetworkListingsDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkListingsDataStore.swift; path = Core/Listings/DataStores/NetworkListingsDataStore.swift; sourceTree = "<group>"; };
+		2B26AE021D9B83A400A588C0 /* ListingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListingsViewController.swift; path = Presentation/Listings/ListingsViewController.swift; sourceTree = "<group>"; };
+		2B26AE041D9B880C00A588C0 /* ListingsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListingsRepository.swift; path = Core/Listings/ListingsRepository.swift; sourceTree = "<group>"; };
+		2B26AE061D9B883000A588C0 /* ListingsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListingsPresenter.swift; path = Presentation/Listings/ListingsPresenter.swift; sourceTree = "<group>"; };
+		2B26AE0B1D9B88AB00A588C0 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = Presentation/Profile/ProfileViewController.swift; sourceTree = "<group>"; };
+		2B26AE0D1D9B88B600A588C0 /* ProfilePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfilePresenter.swift; path = Presentation/Profile/ProfilePresenter.swift; sourceTree = "<group>"; };
 		2B57E5691D99048500CA8D65 /* AirbnbNano.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AirbnbNano.entitlements; sourceTree = "<group>"; };
 		2B5D53DC1D984A5A00630140 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		2B7876691D977F9D00142678 /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginPresenter.swift; path = Presentation/Login/LoginPresenter.swift; sourceTree = "<group>"; };
@@ -113,11 +133,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B26ADFC1D9B7CD000A588C0 /* DataStores */ = {
+			isa = PBXGroup;
+			children = (
+				2B26ADFD1D9B7D0300A588C0 /* ListingDataStoreProtocol.swift */,
+				2B26ADFF1D9B7D3000A588C0 /* NetworkListingsDataStore.swift */,
+			);
+			name = DataStores;
+			sourceTree = "<group>";
+		};
+		2B26AE011D9B837D00A588C0 /* Listings */ = {
+			isa = PBXGroup;
+			children = (
+				2B26AE021D9B83A400A588C0 /* ListingsViewController.swift */,
+				2B26AE061D9B883000A588C0 /* ListingsPresenter.swift */,
+			);
+			name = Listings;
+			sourceTree = "<group>";
+		};
+		2B26AE091D9B887000A588C0 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				2B26AE0B1D9B88AB00A588C0 /* ProfileViewController.swift */,
+				2B26AE0D1D9B88B600A588C0 /* ProfilePresenter.swift */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		2B26AE0A1D9B887800A588C0 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
 		2B7876651D977CCB00142678 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
 				2BD77A9F1D934005007F15FA /* Main.storyboard */,
 				2B7876681D977E5300142678 /* Login */,
+				2B26AE091D9B887000A588C0 /* Profile */,
+				2B26AE011D9B837D00A588C0 /* Listings */,
+				2B26AE0A1D9B887800A588C0 /* Map */,
 			);
 			name = Presentation;
 			sourceTree = "<group>";
@@ -161,6 +218,11 @@
 		2BB116B31D98864800F6496A /* Listings */ = {
 			isa = PBXGroup;
 			children = (
+				2B26ADF21D9B7B5C00A588C0 /* ListingEntity.swift */,
+				2B26AE041D9B880C00A588C0 /* ListingsRepository.swift */,
+				2B26ADF81D9B7C8E00A588C0 /* Listing+CoreDataClass.swift */,
+				2B26ADF91D9B7C8E00A588C0 /* Listing+CoreDataProperties.swift */,
+				2B26ADFC1D9B7CD000A588C0 /* DataStores */,
 			);
 			name = Listings;
 			sourceTree = "<group>";
@@ -563,10 +625,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B26ADFB1D9B7C8E00A588C0 /* Listing+CoreDataProperties.swift in Sources */,
+				2B26AE0E1D9B88B600A588C0 /* ProfilePresenter.swift in Sources */,
 				2B78766A1D977F9D00142678 /* LoginPresenter.swift in Sources */,
 				2BB116CC1D989A8B00F6496A /* SessionRepository.swift in Sources */,
+				2B26AE071D9B883000A588C0 /* ListingsPresenter.swift in Sources */,
 				2BD77AA41D934005007F15FA /* AirbnbNano.xcdatamodeld in Sources */,
+				2B26AE051D9B880C00A588C0 /* ListingsRepository.swift in Sources */,
+				2B26AE0C1D9B88AB00A588C0 /* ProfileViewController.swift in Sources */,
 				2BB116B81D98872900F6496A /* UsersDataStoreProtocol.swift in Sources */,
+				2B26AE031D9B83A400A588C0 /* ListingsViewController.swift in Sources */,
 				2BB116BC1D98881400F6496A /* AppStatusDataStoreProtocol.swift in Sources */,
 				2B8F96B51D983D0F00469706 /* Konstants.swift in Sources */,
 				2B78766E1D97804000142678 /* LoginViewController.swift in Sources */,
@@ -574,8 +642,12 @@
 				2BB116B61D98870B00F6496A /* UserEntity.swift in Sources */,
 				2BB116C81D98979800F6496A /* SessionDataStoreProtocol.swift in Sources */,
 				2BB116BE1D98894B00F6496A /* LocalAppStatusDataStore.swift in Sources */,
+				2B26ADF31D9B7B5C00A588C0 /* ListingEntity.swift in Sources */,
 				2B5D53DD1D984A5A00630140 /* Globals.swift in Sources */,
+				2B26ADFA1D9B7C8E00A588C0 /* Listing+CoreDataClass.swift in Sources */,
+				2B26ADFE1D9B7D0300A588C0 /* ListingDataStoreProtocol.swift in Sources */,
 				2BD77A9C1D934005007F15FA /* AppDelegate.swift in Sources */,
+				2B26AE001D9B7D3000A588C0 /* NetworkListingsDataStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

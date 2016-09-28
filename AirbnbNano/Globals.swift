@@ -20,6 +20,10 @@ protocol PresenterProtocol : class {
     associatedtype View = ViewProtocol
     
     func attachView(view: View)
+    
+    func onLoad()
+    
+    func beforeAppear()
 }
 
 protocol ViewProtocol : class {

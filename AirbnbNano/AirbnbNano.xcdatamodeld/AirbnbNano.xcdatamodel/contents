@@ -1,4 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="16A323" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Listing" representedClassName=".Listing" syncable="YES">
+        <attribute name="bathroomsQuantity" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="bedroomKind" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bedroomsQuantity" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="bedsQuantity" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="estateKind" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="guestsCapacity" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="housingDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nightPrice" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="picture" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="publicAddress" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userEmail" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Listing" positionX="-63" positionY="-18" width="128" height="255"/>
+    </elements>
 </model>

@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -64,6 +65,78 @@
             </objects>
             <point key="canvasLocation" x="1142" y="-555"/>
         </scene>
+        <!--Profile-->
+        <scene sceneID="OdS-B8-gK9">
+            <objects>
+                <navigationController id="tUE-kY-vuT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="user" id="H9A-7R-cMH"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iUj-az-GoM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="nfP-hE-86S" kind="relationship" relationship="rootViewController" id="kRu-nS-Ktr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Jp-Hv-GPy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2092" y="-528"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="W2T-ou-a05">
+            <objects>
+                <viewController id="nfP-hE-86S" customClass="ProfileViewController" customModule="AirbnbNano" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nT4-kw-zSq"/>
+                        <viewControllerLayoutGuide type="bottom" id="CDH-LP-7Vv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lGL-BX-Nke">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qmj-t8-vfs">
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="qmj-t8-vfs" secondAttribute="height" multiplier="1:1" id="OwE-Ka-35i"/>
+                                    <constraint firstAttribute="width" constant="120" id="baU-x0-DV3"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hN-RX-GBq">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="erN-H7-8hr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jtg-Ks-Ske">
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                <state key="normal" title="Favorites"/>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="FMB-fn-Jj1"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4hN-RX-GBq" firstAttribute="top" secondItem="qmj-t8-vfs" secondAttribute="bottom" constant="40" id="2Of-Tv-0ip"/>
+                            <constraint firstItem="4hN-RX-GBq" firstAttribute="centerX" secondItem="lGL-BX-Nke" secondAttribute="centerX" id="72Q-hd-84U"/>
+                            <constraint firstItem="jtg-Ks-Ske" firstAttribute="centerX" secondItem="lGL-BX-Nke" secondAttribute="centerX" id="OSo-rC-yDl"/>
+                            <constraint firstItem="FMB-fn-Jj1" firstAttribute="centerY" secondItem="qmj-t8-vfs" secondAttribute="centerY" id="bDU-i9-cYj"/>
+                            <constraint firstItem="qmj-t8-vfs" firstAttribute="top" secondItem="nT4-kw-zSq" secondAttribute="bottom" constant="40" id="f4M-WP-cxT"/>
+                            <constraint firstItem="FMB-fn-Jj1" firstAttribute="centerX" secondItem="qmj-t8-vfs" secondAttribute="centerX" id="gYy-Tm-Qmg"/>
+                            <constraint firstItem="qmj-t8-vfs" firstAttribute="centerX" secondItem="lGL-BX-Nke" secondAttribute="centerX" id="jkV-oB-7xh"/>
+                            <constraint firstItem="CDH-LP-7Vv" firstAttribute="top" secondItem="jtg-Ks-Ske" secondAttribute="bottom" constant="140" id="lgp-yZ-WXn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Profile" id="a25-RO-rls"/>
+                    <connections>
+                        <outlet property="completeNameLabel" destination="4hN-RX-GBq" id="Jr5-rY-Etx"/>
+                        <outlet property="profilePicDownloadActivityIndicator" destination="FMB-fn-Jj1" id="buw-NP-aad"/>
+                        <outlet property="profilePicImageView" destination="qmj-t8-vfs" id="X0m-b7-Uuv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x54-Ho-vbR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3008.8000000000002" y="-528.48575712143929"/>
+        </scene>
         <!--Map-->
         <scene sceneID="6t5-mW-mW1">
             <objects>
@@ -92,10 +165,15 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="selectedIndex">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
-                        <segue destination="SbH-hL-66g" kind="relationship" relationship="viewControllers" id="RKk-Dl-wr8"/>
-                        <segue destination="U6w-Lm-ziK" kind="relationship" relationship="viewControllers" id="vJL-zE-fEJ"/>
+                        <segue destination="tUE-kY-vuT" kind="relationship" relationship="viewControllers" id="aLT-V1-GOe"/>
                         <segue destination="e4I-SD-deZ" kind="relationship" relationship="viewControllers" id="GEj-Y2-iCO"/>
+                        <segue destination="U6w-Lm-ziK" kind="relationship" relationship="viewControllers" id="vJL-zE-fEJ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="395-fE-bSl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -105,17 +183,17 @@
         <!--Home-->
         <scene sceneID="6uM-yo-OED">
             <objects>
-                <tableViewController id="Lao-K4-boI" sceneMemberID="viewController">
+                <tableViewController id="Lao-K4-boI" customClass="ListingsViewController" customModule="AirbnbNano" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="hrI-wY-gw5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="p64-Q0-ceL">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="listingCell" id="p64-Q0-ceL">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p64-Q0-ceL" id="ExE-qz-A83">
-                                    <frame key="frameInset" width="375" height="43.5"/>
+                                    <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -147,25 +225,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dtj-tR-4ji" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2093" y="258"/>
-        </scene>
-        <!--Profile-->
-        <scene sceneID="20g-hg-tJI">
-            <objects>
-                <viewController id="SbH-hL-66g" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="kN4-94-KfL"/>
-                        <viewControllerLayoutGuide type="bottom" id="sAe-6c-YRg"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="psc-u5-lLR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="user" id="mgb-IU-aoE"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ios-wu-bNw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2094" y="-427"/>
         </scene>
     </scenes>
     <resources>
