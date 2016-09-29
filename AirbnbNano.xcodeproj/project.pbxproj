@@ -18,6 +18,7 @@
 		2B26AE071D9B883000A588C0 /* ListingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B26AE061D9B883000A588C0 /* ListingsPresenter.swift */; };
 		2B26AE0C1D9B88AB00A588C0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B26AE0B1D9B88AB00A588C0 /* ProfileViewController.swift */; };
 		2B26AE0E1D9B88B600A588C0 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B26AE0D1D9B88B600A588C0 /* ProfilePresenter.swift */; };
+		2B26AE101D9CAD1500A588C0 /* ListingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B26AE0F1D9CAD1500A588C0 /* ListingCell.swift */; };
 		2B5D53DD1D984A5A00630140 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5D53DC1D984A5A00630140 /* Globals.swift */; };
 		2B78766A1D977F9D00142678 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7876691D977F9D00142678 /* LoginPresenter.swift */; };
 		2B78766E1D97804000142678 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78766D1D97804000142678 /* LoginViewController.swift */; };
@@ -71,6 +72,7 @@
 		2B26AE061D9B883000A588C0 /* ListingsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListingsPresenter.swift; path = Presentation/Listings/ListingsPresenter.swift; sourceTree = "<group>"; };
 		2B26AE0B1D9B88AB00A588C0 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = Presentation/Profile/ProfileViewController.swift; sourceTree = "<group>"; };
 		2B26AE0D1D9B88B600A588C0 /* ProfilePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfilePresenter.swift; path = Presentation/Profile/ProfilePresenter.swift; sourceTree = "<group>"; };
+		2B26AE0F1D9CAD1500A588C0 /* ListingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListingCell.swift; path = Presentation/Listings/ListingCell.swift; sourceTree = "<group>"; };
 		2B57E5691D99048500CA8D65 /* AirbnbNano.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AirbnbNano.entitlements; sourceTree = "<group>"; };
 		2B5D53DC1D984A5A00630140 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		2B7876691D977F9D00142678 /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginPresenter.swift; path = Presentation/Login/LoginPresenter.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			children = (
 				2B26AE021D9B83A400A588C0 /* ListingsViewController.swift */,
 				2B26AE061D9B883000A588C0 /* ListingsPresenter.swift */,
+				2B26AE0F1D9CAD1500A588C0 /* ListingCell.swift */,
 			);
 			name = Listings;
 			sourceTree = "<group>";
@@ -631,6 +634,7 @@
 				2BB116CC1D989A8B00F6496A /* SessionRepository.swift in Sources */,
 				2B26AE071D9B883000A588C0 /* ListingsPresenter.swift in Sources */,
 				2BD77AA41D934005007F15FA /* AirbnbNano.xcdatamodeld in Sources */,
+				2B26AE101D9CAD1500A588C0 /* ListingCell.swift in Sources */,
 				2B26AE051D9B880C00A588C0 /* ListingsRepository.swift in Sources */,
 				2B26AE0C1D9B88AB00A588C0 /* ProfileViewController.swift in Sources */,
 				2BB116B81D98872900F6496A /* UsersDataStoreProtocol.swift in Sources */,

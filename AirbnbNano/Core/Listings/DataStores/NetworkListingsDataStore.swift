@@ -13,13 +13,18 @@ import Alamofire
 class NetworkListingsDataStore : ListingsDataStoreProtocol {
     
     
-    func getListings(by returner: ListingsReturner, orFailWith thrower: Thrower) {
+    func getListings(by returner: @escaping ListingsReturner, orFailWith thrower: Thrower) {
         
         Alamofire.request(KUris.exampleLink).responseJSON { (payload: DataResponse<Any>) in
-            print(payload.response)
-            
-            if let JSON = payload.result.value {
-                print("JSON: \(JSON)")
+            if let dict = payload.result.value as? [String: Any] {
+                if let searchResults = dict["search_results"]! as? [[String:Any]] {
+                    let parsedResults = ListingEntity.from(dicts: searchResults)
+                    returner(parsedResults)
+                } else {
+                    log.error("Could not cast into array of dictionaries")
+                }
+            } else {
+                log.error("Could not cast response data into dictionary")
             }
         }
     }

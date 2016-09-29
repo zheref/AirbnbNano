@@ -19,6 +19,8 @@ typealias ErrorThrower = (NSError) -> Void
 protocol PresenterProtocol : class {
     associatedtype View = ViewProtocol
     
+    var vc: View? { get set }
+    
     func attachView(view: View)
     
     func onLoad()
@@ -31,7 +33,9 @@ protocol ViewProtocol : class {
 }
 
 protocol RepositoryProtocol : class {
+    associatedtype DataStore = DataStoreProtocol
     
+    var dataStore: DataStore { get set }
 }
 
 protocol ModelProtocol : class {

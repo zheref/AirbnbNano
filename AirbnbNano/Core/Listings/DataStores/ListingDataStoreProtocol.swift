@@ -8,10 +8,10 @@
 
 import Foundation
 
-typealias ListingsReturner = ([Listing]) -> Void
+typealias ListingsReturner = ([ListingEntity]) -> Void
 
-protocol ListingsDataStoreProtocol {
+protocol ListingsDataStoreProtocol : DataStoreProtocol {
     
-    func getListings(by returner: ListingsReturner, orFailWith thrower: Thrower)
+    func getListings(by returner: @escaping ListingsReturner, orFailWith thrower: Thrower)
     
 }
